@@ -1,17 +1,31 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
+import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Scanner scanner = new Scanner(System.in);
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        System.out.print("Ingrese el valor del lado del cuadrado: ");
+        double ladoCuadrado = scanner.nextDouble();
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        System.out.print("Ingrese los valores de los lados del triángulo (separados por espacios): ");
+        double lado1Triangulo = scanner.nextDouble();
+        double lado2Triangulo = scanner.nextDouble();
+        double lado3Triangulo = scanner.nextDouble();
+
+        System.out.print("Ingrese el valor del radio del círculo: ");
+        double radioCirculo = scanner.nextDouble();
+
+        Cuadrado cuadrado = new Cuadrado(ladoCuadrado);
+        Triangulo triangulo = new Triangulo(lado1Triangulo, lado2Triangulo, lado3Triangulo);
+        Circulo circulo = new Circulo(radioCirculo);
+
+
+        System.out.println("Cuadrado - Perímetro: " + cuadrado.calcularPerimetro());
+        System.out.println("Cuadrado - Área: " + cuadrado.calcularArea());
+
+        System.out.println("Triángulo - Perímetro: " + triangulo.calcularPerimetro());
+        System.out.println("Triángulo - Área: " + triangulo.calcularArea());
+
+        System.out.println("Círculo - Perímetro: " + circulo.calcularPerimetro());
+        System.out.println("Círculo - Área: " + circulo.calcularArea());
     }
 }
