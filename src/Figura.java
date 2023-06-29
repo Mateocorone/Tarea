@@ -1,2 +1,4 @@
-package PACKAGE_NAME;public class Figura {
+abstract class Figura {
+    abstract double calcularPerimetro();
+    abstract double calcularArea();
 }
